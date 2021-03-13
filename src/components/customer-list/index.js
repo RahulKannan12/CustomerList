@@ -18,7 +18,7 @@ class CustomerList extends React.Component{
   }
 
   handleCustomerAddition(){
-    if(this.state.CustomerTemp == '' || this.state.CustomerTemp == null){
+    if(this.state.currentCustomer == '' || this.state.currentCustomer == null){
       return;
     }
     var CustomerTemp = this.state.currentCustomer;
@@ -33,7 +33,7 @@ class CustomerList extends React.Component{
     return (
       <div className="mt-75 layout-column justify-content-center align-items-center">
         <section className="layout-row align-items-center justify-content-center">
-          <input type="text" className="large" placeholder="Name" data-testid="app-input" onChange = {this.handleTermChange}/>
+          <input type="text" className="large" placeholder="Name" data-testid="app-input" value={this.state.currentCustomer} onChange = {this.handleTermChange}/>
           <button type="submit" className="ml-30" data-testid="submit-button" onClick={this.handleCustomerAddition}>Add Customer</button>
         </section>
   
